@@ -5,7 +5,6 @@ import android.content.res.Resources;
 import android.net.Uri;
 import android.text.TextUtils;
 
-import com.bumptech.glide.load.model.GlideUrl;
 import com.bumptech.glide.load.model.Headers;
 import com.facebook.react.views.imagehelper.ImageSource;
 
@@ -106,7 +105,7 @@ public class FastImageSource extends ImageSource {
         return mHeaders;
     }
 
-    public GlideUrl getGlideUrl() {
-        return new GlideUrl(getUri().toString(), getHeaders());
+    public FastImageGlideUrl getGlideUrl() {
+        return new FastImageGlideUrl(getUri().toString(), getHeaders());
     }
 }

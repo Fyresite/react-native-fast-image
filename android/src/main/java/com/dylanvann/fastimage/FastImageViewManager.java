@@ -8,7 +8,6 @@ import android.os.Build;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestManager;
-import com.bumptech.glide.load.model.GlideUrl;
 import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.bridge.WritableNativeMap;
@@ -70,9 +69,8 @@ class FastImageViewManager extends SimpleViewManager<FastImageViewWithUrl> imple
             return;
         }
 
-        //final GlideUrl glideUrl = FastImageViewConverter.getGlideUrl(view.getContext(), source);
         final FastImageSource imageSource = FastImageViewConverter.getImageSource(view.getContext(), source);
-        final GlideUrl glideUrl = imageSource.getGlideUrl();
+        final FastImageGlideUrl glideUrl = imageSource.getGlideUrl();
 
         // Cancel existing request.
         view.glideUrl = glideUrl;
