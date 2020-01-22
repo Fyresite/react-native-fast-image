@@ -9,7 +9,6 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.Registry;
 import com.bumptech.glide.annotation.GlideModule;
 import com.bumptech.glide.integration.okhttp3.OkHttpUrlLoader;
-import com.bumptech.glide.load.model.GlideUrl;
 import com.bumptech.glide.module.LibraryGlideModule;
 import com.facebook.react.modules.network.OkHttpClientProvider;
 
@@ -48,7 +47,7 @@ public class FastImageOkHttpProgressGlideModule extends LibraryGlideModule {
                 .addInterceptor(createInterceptor(progressListener))
                 .build();
         OkHttpUrlLoader.Factory factory = new OkHttpUrlLoader.Factory(client);
-        registry.replace(GlideUrl.class, InputStream.class, factory);
+        registry.replace(FastImageGlideUrl.class, InputStream.class, factory);
     }
 
     private static Interceptor createInterceptor(final ResponseProgressListener listener) {
