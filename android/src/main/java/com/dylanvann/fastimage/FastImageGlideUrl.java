@@ -1,3 +1,5 @@
+package com.dylanvann.fastimage;
+
 import com.bumptech.glide.load.model.GlideUrl;
 
 public class FastImageGlideUrl extends GlideUrl {
